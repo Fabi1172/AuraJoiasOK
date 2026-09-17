@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Heart, Lock, Key, CreditCard, Sparkles, MessageCircle } from 'lucide-react';
+import { ShieldCheck, Heart, Lock, Key, CreditCard, Sparkles, MessageCircle, Instagram, Facebook } from 'lucide-react';
 import { AuraLogo } from './AuraLogo';
 
 interface FooterProps {
@@ -18,10 +18,35 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdmin }) => {
             <p className="text-xs sm:text-sm text-[#6E6456] leading-relaxed max-w-sm">
               Semijóias de alto padrão concebidas para mulheres sofisticadas. Peças nobres com camada espessa de 10 milésimos de Ouro 18k, microcravação artesanal de zircônias e 1 ano de garantia com certificado.
             </p>
-            <div className="flex items-center gap-3 pt-1">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <span className="text-[11px] font-semibold text-[#8F6A10] px-3 py-1 bg-white rounded-full border border-[#D4AF37]/40 shadow-2xs">
                 ✨ Banho Hipoalergênico Zero Níquel
               </span>
+            </div>
+            {/* Social Links */}
+            <div className="pt-2 flex items-center gap-2.5">
+              <a
+                id="footer-social-instagram"
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-[#FAF6EC] border border-[#E0D8C3] hover:border-[#D4AF37] text-[#574F44] hover:text-[#967012] text-xs font-semibold transition-all shadow-2xs group"
+                title="Siga a Aura Semijóias no Instagram"
+              >
+                <Instagram className="w-4 h-4 text-[#E1306C] group-hover:scale-110 transition-transform" />
+                <span>Instagram</span>
+              </a>
+              <a
+                id="footer-social-facebook"
+                href="https://www.facebook.com/?locale=pt_BR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-[#FAF6EC] border border-[#E0D8C3] hover:border-[#1877F2]/40 text-[#574F44] hover:text-[#1877F2] text-xs font-semibold transition-all shadow-2xs group"
+                title="Acompanhe a Aura Semijóias no Facebook"
+              >
+                <Facebook className="w-4 h-4 text-[#1877F2] group-hover:scale-110 transition-transform" />
+                <span>Facebook</span>
+              </a>
             </div>
           </div>
 

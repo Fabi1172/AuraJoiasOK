@@ -1179,11 +1179,11 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                 </div>
               </div>
 
-              {/* Store Announcement & Admin Pin */}
+              {/* Store Announcement, WhatsApp & Admin Pin */}
               <div className="p-4 bg-[#FAF9F5] border border-[#E8DFC8] rounded-xl space-y-3">
-                <h4 className="font-bold text-sm text-[#1C1815]">Barra de Avisos & Senha</h4>
+                <h4 className="font-bold text-sm text-[#1C1815]">Atendimento, Barra de Avisos & Senha</h4>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  <div className="sm:col-span-2">
+                  <div className="sm:col-span-3">
                     <label className="block text-gray-700 font-semibold mb-1">Texto da Barra Superior</label>
                     <input
                       type="text"
@@ -1191,6 +1191,17 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                       onChange={(e) => setSettingsForm({ ...settingsForm, announcementText: e.target.value })}
                       className="w-full p-2.5 bg-white border border-gray-300 rounded-lg outline-none"
                     />
+                  </div>
+                  <div className="sm:col-span-2">
+                    <label className="block text-gray-700 font-semibold mb-1">WhatsApp de Atendimento (Fale Conosco)</label>
+                    <input
+                      type="text"
+                      value={settingsForm.whatsappNumber || ''}
+                      onChange={(e) => setSettingsForm({ ...settingsForm, whatsappNumber: e.target.value })}
+                      placeholder="(11) 99132-6903"
+                      className="w-full p-2.5 bg-white border border-gray-300 rounded-lg outline-none"
+                    />
+                    <p className="text-[11px] text-gray-500 mt-0.5">Exibido no botão "Fale Conosco" abaixo do carrinho.</p>
                   </div>
                   <div>
                     <label className="block text-gray-700 font-semibold mb-1">PIN do Painel Lojista</label>

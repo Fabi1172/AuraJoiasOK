@@ -143,6 +143,7 @@ function StoreContent() {
         onSearchChange={setSearchQuery}
         onOpenAuth={() => setIsAuthModalOpen(true)}
         announcementText={settings.announcementText}
+        whatsappNumber={settings.whatsappNumber}
       />
 
       {/* Hero Banner with High-Conversion Luxury Atmosphere */}

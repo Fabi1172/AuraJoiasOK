@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { X, ShieldCheck, Sparkles, CheckCircle2, Instagram, Facebook } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { AuraLogo } from './AuraLogo';
 
@@ -138,10 +138,41 @@ export const GoogleAuthModal: React.FC<GoogleAuthModalProps> = ({
                     d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
                   />
                 </svg>
-                <span>{loading ? 'Conectando ao Google...' : 'Continuar com o Google'}</span>
+                <span>{loading ? 'Conectando ao Google...' : 'Entrar com o Google'}</span>
               </button>
 
-              <div className="pt-2 flex items-center justify-center gap-2 text-xs text-[#7A6F62]">
+              {/* Redes Sociais da Loja */}
+              <div className="pt-2 border-t border-[#EDE5D3]/80 space-y-2">
+                <p className="text-[11px] font-medium text-[#7A6F62]">
+                  Siga a Aura Semijóias nas redes sociais:
+                </p>
+                <div className="flex items-center justify-center gap-3">
+                  <a
+                    id="modal-social-instagram"
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 py-2 px-4 rounded-xl bg-[#FAF9F5] hover:bg-[#F5EEDC] text-[#3D352E] hover:text-[#967012] border border-[#E0D8C3] hover:border-[#D4AF37] text-xs font-semibold transition-all shadow-2xs group"
+                    title="Instagram Aura Semijóias"
+                  >
+                    <Instagram className="w-4 h-4 text-[#E1306C] group-hover:scale-110 transition-transform" />
+                    <span>Instagram</span>
+                  </a>
+                  <a
+                    id="modal-social-facebook"
+                    href="https://www.facebook.com/?locale=pt_BR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 py-2 px-4 rounded-xl bg-[#FAF9F5] hover:bg-[#F5EEDC] text-[#3D352E] hover:text-[#1877F2] border border-[#E0D8C3] hover:border-[#1877F2]/40 text-xs font-semibold transition-all shadow-2xs group"
+                    title="Facebook Aura Semijóias"
+                  >
+                    <Facebook className="w-4 h-4 text-[#1877F2] group-hover:scale-110 transition-transform" />
+                    <span>Facebook</span>
+                  </a>
+                </div>
+              </div>
+
+              <div className="pt-1 flex items-center justify-center gap-2 text-xs text-[#7A6F62]">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
                 <span>Seus dados são protegidos por criptografia de ponta a ponta</span>
               </div>

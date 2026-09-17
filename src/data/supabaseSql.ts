@@ -31,6 +31,9 @@ CREATE TABLE IF NOT EXISTS public.products (
 
 ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Permitir leitura pública de produtos" ON public.products;
+DROP POLICY IF EXISTS "Permitir inserção e atualização de produtos" ON public.products;
+
 CREATE POLICY "Permitir leitura pública de produtos"
 ON public.products FOR SELECT TO public USING (true);
 
@@ -61,6 +64,10 @@ CREATE TABLE IF NOT EXISTS public.orders (
 
 ALTER TABLE public.orders ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Permitir criação de novos pedidos" ON public.orders;
+DROP POLICY IF EXISTS "Permitir consulta de pedidos" ON public.orders;
+DROP POLICY IF EXISTS "Permitir atualização de status e rastreio de pedidos" ON public.orders;
+
 CREATE POLICY "Permitir criação de novos pedidos"
 ON public.orders FOR INSERT TO public WITH CHECK (true);
 
@@ -87,6 +94,9 @@ CREATE TABLE IF NOT EXISTS public.shipping_options (
 
 ALTER TABLE public.shipping_options ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Permitir leitura de opções de frete ativas" ON public.shipping_options;
+DROP POLICY IF EXISTS "Permitir gerenciamento de opções de frete" ON public.shipping_options;
+
 CREATE POLICY "Permitir leitura de opções de frete ativas"
 ON public.shipping_options FOR SELECT TO public USING (true);
 
@@ -111,6 +121,9 @@ CREATE TABLE IF NOT EXISTS public.store_settings (
 );
 
 ALTER TABLE public.store_settings ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Permitir leitura de configurações públicas da loja" ON public.store_settings;
+DROP POLICY IF EXISTS "Permitir alteração de configurações da loja" ON public.store_settings;
 
 CREATE POLICY "Permitir leitura de configurações públicas da loja"
 ON public.store_settings FOR SELECT TO public USING (true);
@@ -168,13 +181,14 @@ VALUES
     ('ship-free', 'Frete Grátis Especial', 'Cortesia Aura Semijóias para pedidos qualificados com embalagem de luxo', 0.00, '4 a 7 dias úteis', 299.00, true)
 ON CONFLICT (id) DO NOTHING;
 
-INSERT INTO public.store_settings (id, "storeName", "announcementText", "freeShippingThreshold", "adminPin")
+INSERT INTO public.store_settings (id, "storeName", "announcementText", "freeShippingThreshold", "adminPin", "whatsappNumber")
 VALUES (
     'default',
     'Aura Semijóias',
     'Frete Grátis para todo o Brasil em compras acima de R$ 299 • 10 Milésimos de Ouro 18k • 1 Ano de Garantia',
     299.00,
-    'AUADMOK'
+    'AUADMOK',
+    '(11) 991326903'
 )
-ON CONFLICT (id) DO UPDATE SET "adminPin" = 'AUADMOK';
+ON CONFLICT (id) DO UPDATE SET "adminPin" = 'AUADMOK', "whatsappNumber" = '(11) 991326903';
 `;

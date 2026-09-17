@@ -137,8 +137,11 @@ export function getStoredSettings(): StoreSettings {
       const parsed = JSON.parse(local);
       if (parsed.adminPin === '1234' || !parsed.adminPin) {
         parsed.adminPin = 'AUADMOK';
-        localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(parsed));
       }
+      if (!parsed.whatsappNumber || parsed.whatsappNumber === '5511999999999') {
+        parsed.whatsappNumber = '(11) 991326903';
+      }
+      localStorage.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(parsed));
       return { ...INITIAL_SETTINGS, ...parsed };
     } catch (e) {
       console.error(e);

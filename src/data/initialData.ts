@@ -246,7 +246,7 @@ export const INITIAL_SETTINGS: StoreSettings = {
   supabaseUrl: '',
   supabaseAnonKey: '',
   googleClientId: '',
-  whatsappNumber: '5511999999999',
+  whatsappNumber: '(11) 991326903',
   adminPin: 'AUADMOK'
 };
 
