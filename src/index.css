@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    background-color: #FAF9F6;
+  }
+
+  h1, h2, h3, .font-serif-luxury {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Custom Gold Palette & Accents */
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA7C11 100%);
+}
+
+.gold-gradient-soft {
+  background: linear-gradient(135deg, #FAF4E6 0%, #F3E5AB 50%, #FAF4E6 100%);
+}
+
+.gold-border-subtle {
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+.gold-shadow {
+  box-shadow: 0 8px 25px -4px rgba(212, 175, 55, 0.18), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+}
+
+.gold-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gold-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -6px rgba(212, 175, 55, 0.22), 0 6px 12px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ede4;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b58d24;
+}

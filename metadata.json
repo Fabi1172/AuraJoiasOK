@@ -1,0 +1,6 @@
+{
+  "name": "Aura Semijóias",
+  "description": "Loja online de semijóias de alto padrão banhadas a ouro 18k, com checkout Stripe, cadastro Google e painel de controle administrativo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
